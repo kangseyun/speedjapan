@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">SppedJapan</string>
+    <string name="app_title">SppedJapan</string>
+    <string name="히라가나">ひらがな</string>
+    <string name="가타카나">ガタカナ</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="title_activity_game_menu">GameMenu</string>
+    <string name="title_activity_game_start">GameStart</string>
+    <string name="title_activity_game_result_view">GameResultView</string>
+    <string name="title_activity_setting">SettingActivity</string>
+    <string name="title_activity_word">WordActivity</string>
+
+<!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_first_setting">FirstSettingActivity</string>
+</resources>

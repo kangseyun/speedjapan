@@ -1,0 +1,54 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.cyber.seyun.sppedjapan.Fragment.FirstSettingLevelSetFragment">
+
+    <RelativeLayout
+        android:background="@color/Cyan"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:paddingTop="30dp"
+        android:gravity="center_horizontal">
+        <TextView
+            android:id="@+id/tmp_init_textview1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:textSize="30dp"
+            android:text="켜자마자 단어 수준"/>
+
+        <RadioGroup
+            android:id="@+id/Radio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tmp_init_textview1">
+            <RadioButton
+                android:layout_marginTop="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="초급 "
+                android:textColor="@color/white"
+                android:id="@+id/radioButton_level1"
+                />
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="중급"
+                android:textColor="@color/white"
+                android:id="@+id/radioButton_level2"
+                android:layout_below="@+id/radioButton_level1"
+                />
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="고급"
+                android:textColor="@color/white"
+                android:id="@+id/radioButton_level3"
+                android:layout_below="@+id/radioButton_level2"
+                />
+        </RadioGroup>
+
+    </RelativeLayout>
+</FrameLayout>

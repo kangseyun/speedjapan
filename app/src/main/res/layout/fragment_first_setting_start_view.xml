@@ -1,0 +1,28 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.cyber.seyun.sppedjapan.Fragment.FirstSettingStartViewFragment">
+    <!-- TODO: Update blank fragment layout -->
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="@color/Cyan"
+        android:paddingTop="100dp"
+        android:gravity="center">
+        <TextView
+            android:id="@+id/tmp_init_textview1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:textSize="30dp"
+            android:text="켜자마자 단어"/>
+        <Button
+            android:id="@+id/first_setting_start_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tmp_init_textview1"
+            android:text="ON"/>
+    </RelativeLayout>
+
+</FrameLayout>

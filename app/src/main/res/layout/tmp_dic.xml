@@ -1,0 +1,66 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.cyber.seyun.sppedjapan.Activity.GameMenu">
+
+    <!-- Layout Title -->
+    <LinearLayout
+        android:id="@+id/layout_title"
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:background="@color/Cyan">
+        <ImageView
+            android:layout_marginLeft="10dp"
+            android:layout_gravity="center"
+            android:layout_width="32dp"
+            android:layout_height="30dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/icon"/>
+        <TextView
+            android:layout_marginLeft="-20dp"
+            android:id="@+id/Title"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:gravity="center"
+            android:text="단어장 1"
+            android:textSize="25dp"
+            android:textColor="@color/white"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:orientation="horizontal"
+        android:paddingRight="10dp"
+        android:paddingLeft="15dp"
+        android:layout_height="40dp">
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_weight="1"
+            android:layout_height="fill_parent" />
+        <Button
+            android:layout_width="70dp"
+            android:layout_height="fill_parent"
+            android:text="검색"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@color/Cyan"
+        android:orientation="vertical">
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center">
+            <ListView
+                android:id="@+id/tmpdiclistview"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent">
+            </ListView>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</LinearLayout>
