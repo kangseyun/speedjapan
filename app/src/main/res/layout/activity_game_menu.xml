@@ -6,29 +6,7 @@
     tools:context="com.cyber.seyun.sppedjapan.Activity.GameMenu">
 
     <!-- Layout Title -->
-    <LinearLayout
-        android:id="@+id/layout_title"
-        android:layout_width="fill_parent"
-        android:layout_height="50dp"
-        android:background="@color/colorPrimary">
-        <Button
-            android:id="@+id/LeftMenuButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="뒤로가기"
-            android:layout_marginLeft="10dp"
-            />
-        <TextView
-            android:id="@+id/Title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:paddingLeft="38dp"
-            android:text="기본 문자"
-            android:textSize="25dp"
-            android:textColor="@color/white"/>
-    </LinearLayout>
+    <include layout="@layout/toolbar" />
 
     <LinearLayout
         android:layout_width="fill_parent"

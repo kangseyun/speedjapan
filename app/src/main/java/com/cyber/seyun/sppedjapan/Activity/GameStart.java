@@ -4,7 +4,10 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -21,11 +24,11 @@ import java.util.Random;
 
 public class GameStart extends AppCompatActivity implements View.OnClickListener {
     private String TAG = GameStart.class.getSimpleName();
-
+    private Toolbar toolbar;
     public static GameItem item;
     private Intent intent;
     private TextView JapanView, CountView;
-    private Button button1, button2, button3, BackButton;
+    private Button button1, button2, button3;
     private DBController db = new DBController();
     private int GanePlayCount = 0;
     private CountTimer c = new CountTimer();
@@ -38,6 +41,7 @@ public class GameStart extends AppCompatActivity implements View.OnClickListener
     }
 
     void init() {
+        toolbarSetup();
         FindView();
         item.init();
         nextView(); //첫번째 단어를 셋팅해줌
@@ -45,17 +49,15 @@ public class GameStart extends AppCompatActivity implements View.OnClickListener
             c.start();
     }
 
-    private void FindView() {   //레이아웃 Settion
+    private void FindView() {
         JapanView = (TextView) findViewById(R.id.gameStartView);
         CountView = (TextView) findViewById(R.id.text_game_start_count);
-        BackButton = (Button) findViewById(R.id.EndGame);
         button1 = (Button) findViewById(R.id.gamestartButton1);
         button2 = (Button) findViewById(R.id.gamestartButton2);
         button3 = (Button) findViewById(R.id.gamestartButton3);
         button3.setOnClickListener(this);
         button2.setOnClickListener(this);
         button1.setOnClickListener(this);
-        BackButton.setOnClickListener(this);
     }
 
     private void ButtonClick(Button b) {   //버튼 클릭시 이벤트
@@ -71,6 +73,19 @@ public class GameStart extends AppCompatActivity implements View.OnClickListener
             finish();
             c.interrupt();
         }
+    }
+
+    private void toolbarSetup() {
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar.setTitle(titleSetup());
+        toolbar.setTitleTextColor(getResources().getColor(R.color.white));
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+    }
+
+    private String titleSetup() {
+        return GameItem.Flag == 1 ? "히라가나" : "가타카나";
     }
 
     class CountTimer extends Thread implements Runnable {
@@ -138,14 +153,21 @@ public class GameStart extends AppCompatActivity implements View.OnClickListener
             case R.id.gamestartButton3:
                 ButtonClick(button3);
                 break;
-            case R.id.EndGame:
-                intent = new Intent(GameStart.this, GameMenu.class);
-                startActivity(intent);
-                c.interrupt();
-                GameItem.timer_init();
-                break;
         }
     }
 
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle item selection
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                finish();
+                c.interrupt();
+                GameItem.timer_init();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
 
 }

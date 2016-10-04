@@ -1,5 +1,7 @@
 package com.cyber.seyun.sppedjapan;
 
+import android.support.v7.widget.Toolbar;
+
 import java.util.Random;
 
 /**

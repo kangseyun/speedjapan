@@ -4,6 +4,8 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
@@ -19,9 +21,9 @@ import java.util.ArrayList;
 public class SettingActivity extends AppCompatActivity implements View.OnClickListener{
     private ListView listView;
     private ListviewAdapter mAdapter;
-    private Button back;
-    private Intent PageMove;
+    private Toolbar toolbar;
     ArrayList<String> data = new ArrayList<>();
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,10 +33,19 @@ public class SettingActivity extends AppCompatActivity implements View.OnClickLi
 
     private void init()
     {
+        toolbarSetup();
         find();
         setAdater();
     }
 
+    private void toolbarSetup() {
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar.setTitle("설정");
+        toolbar.setTitleTextColor(getResources().getColor(R.color.white));
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+    }
 
     private void setAdater()
     {
@@ -54,20 +65,22 @@ public class SettingActivity extends AppCompatActivity implements View.OnClickLi
 
     private void find(){
         listView = (ListView)findViewById(R.id.Setting_Listview);
-        back = (Button)findViewById(R.id.setting_back);
-        back.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View v) {
         int id = v.getId();
-        switch (id)
-        {
-            case R.id.setting_back:
-                PageMove = new Intent(SettingActivity.this,MainActivity.class);
-                break;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle item selection
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                finish();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
         }
-        
-        startActivity(PageMove);
     }
 }

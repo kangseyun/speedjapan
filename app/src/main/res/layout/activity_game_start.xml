@@ -5,29 +5,8 @@
     android:orientation="vertical"
     tools:context="com.cyber.seyun.sppedjapan.Activity.GameStart">
 
-    <LinearLayout
-        android:id="@+id/layout_title"
-        android:layout_width="fill_parent"
-        android:layout_height="50dp"
-        android:background="@color/Cyan">
-        <Button
-            android:id="@+id/EndGame"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginLeft="10dp"
-            android:text="그만두기"
-            android:textColor="@color/material_blue_grey_800"/>
-        <TextView
-            android:id="@+id/Title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:paddingLeft="50dp"
-            android:text="히라가나"
-            android:textSize="25dp"
-            android:textColor="@color/white"/>
-    </LinearLayout>
+
+    <include layout="@layout/toolbar" />
     <RelativeLayout
         android:layout_width="fill_parent"
         android:layout_height="300dp"
@@ -61,18 +40,23 @@
                 android:id="@+id/gamestartButton1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text=""
-                />
+                android:background="@color/colorPrimary"
+                android:textColor="#FFFFFF"
+                android:layout_marginRight="5dp"/>
             <Button
                 android:id="@+id/gamestartButton2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text=""/>
+                android:background="@color/colorPrimary"
+                android:textColor="#FFFFFF"
+                android:layout_marginRight="5dp"/>
+
             <Button
                 android:id="@+id/gamestartButton3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text=""/>
+                android:background="@color/colorPrimary"
+                android:textColor="#FFFFFF" />
         </LinearLayout>
     </RelativeLayout>
 </LinearLayout>

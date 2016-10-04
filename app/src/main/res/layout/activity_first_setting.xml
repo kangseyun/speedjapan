@@ -4,20 +4,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context="com.cyber.seyun.sppedjapan.Activity.GameMenu">
-    <LinearLayout
-        android:id="@+id/layout_title"
-        android:layout_width="fill_parent"
-        android:layout_height="50dp"
-        android:background="@color/colorPrimary">
-        <TextView
-            android:id="@+id/Title"
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:gravity="center"
-            android:text="초기 설정"
-            android:textSize="25dp"
-            android:textColor="@color/white"/>
-    </LinearLayout>
+    <include layout="@layout/toolbar" />
 
     <LinearLayout
         android:layout_width="fill_parent"

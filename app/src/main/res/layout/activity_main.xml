@@ -5,9 +5,7 @@
     android:orientation="vertical"
     tools:context="com.cyber.seyun.sppedjapan.Activity.MainActivity">
     <!-- Layout Title -->
-    <include layout="@layout/toolbar">
-
-    </include>
+    <include layout="@layout/toolbar" />
 
     <!-- Layout Main -->
     <LinearLayout

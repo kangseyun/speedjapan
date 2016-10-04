@@ -5,28 +5,16 @@
     android:orientation="vertical"
     tools:context="com.cyber.seyun.sppedjapan.Activity.GameStart">
 
-    <LinearLayout
-        android:id="@+id/layout_title"
+    <TextView
+        android:background="@color/Cyan"
+        android:id="@+id/Title"
         android:layout_width="fill_parent"
         android:layout_height="50dp"
-        android:background="@color/Cyan">
-        <ImageButton
-            android:id="@+id/LeftMenuButton"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:layout_gravity="center"
-            android:layout_marginLeft="10dp"
-            android:background="@drawable/icon"/>
-        <TextView
-            android:id="@+id/Title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:paddingLeft="100dp"
-            android:text="결과화면"
-            android:textSize="25dp"
-            android:textColor="@color/white"/>
-    </LinearLayout>
+        android:gravity="center"
+        android:text="RESULT"
+        android:textSize="25dp"
+        android:textColor="@color/white"/>
+
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="300dp"
@@ -57,6 +45,8 @@
                 android:textSize="20dp"
                 android:shadowRadius="@integer/abc_config_activityShortDur"
                 android:text="돌아가기"
+                android:textColor="#FFFFFF"
+                android:background="#37474F"
                 />
         </LinearLayout>
     </RelativeLayout>

@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -15,9 +16,10 @@ import com.cyber.seyun.sppedjapan.Model.GameItem;
 import com.cyber.seyun.sppedjapan.R;
 
 public class GameMenu extends AppCompatActivity implements View.OnClickListener {
-    private Button BackButton,up,down;
+    private Button up, down;
     private Intent PageMove;
     private TextView GameStart,GameStart2,timer;
+    private Toolbar toolbar;
     private final int MAX = 15;
     private final int MIN = 0;
     @Override
@@ -28,26 +30,34 @@ public class GameMenu extends AppCompatActivity implements View.OnClickListener 
         init();
     }
 
-
     //초기화
     private void init(){
         findLayout(); //레이아웃 적용
         GameItem.TimerCount_init(); // 타이머 카운트 0으로 초기화
         timer.setText(Integer.toString(GameItem.TimerCount));
+        toolbarSetup();
     }
 
+    private void toolbarSetup() {
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar.setTitle("단어게임");
+        toolbar.setTitleTextColor(getResources().getColor(R.color.white));
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+    }
 
     private void findLayout()
     {
         GameStart = (TextView)findViewById(R.id.gameMenuGameStart);
         GameStart2 = (TextView)findViewById(R.id.gameMenuGameStart2);
-        BackButton = (Button)findViewById(R.id.LeftMenuButton);
+
+
         up = (Button)findViewById(R.id.time_Up);
         down = (Button)findViewById(R.id.time_Down);
         timer = (TextView)findViewById(R.id.game_menu_timer);
         GameStart.setOnClickListener(this);
         GameStart2.setOnClickListener(this);
-        BackButton.setOnClickListener(this);
         up.setOnClickListener(this);
         down.setOnClickListener(this);
     }
@@ -83,16 +93,28 @@ public class GameMenu extends AppCompatActivity implements View.OnClickListener 
                 GameItem.Flag = 1;
                 startActivity(PageMove);
                 break;
-            case R.id.LeftMenuButton:
-                PageMove = new Intent(GameMenu.this,MainActivity.class);
-                startActivity(PageMove);
-                break;
+//            case R.id.LeftMenuButton:
+//                PageMove = new Intent(GameMenu.this,MainActivity.class);
+//                startActivity(PageMove);
+//                break;
             case R.id.time_Up:
                 Timer_UP();
                 break;
             case R.id.time_Down:
                 Timer_DOWN();
                 break;
+        }
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle item selection
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                finish();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
         }
     }
 }

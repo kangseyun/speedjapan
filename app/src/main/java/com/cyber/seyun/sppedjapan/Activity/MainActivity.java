@@ -21,15 +21,21 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         init();
-        findLayout();
 
     }
 
     private void init() {
-        toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-        toolbar.setTitle("SPEED");
+        toolbarSetup();
+        findLayout();
+    }
 
+    private void toolbarSetup() {
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar.setTitle("스피드 일본어!");
+        toolbar.setTitleTextColor(getResources().getColor(R.color.white));
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
     }
 
     private void findLayout() {
