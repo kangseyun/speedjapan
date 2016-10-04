@@ -8,7 +8,7 @@
         android:id="@+id/layout_title"
         android:layout_width="fill_parent"
         android:layout_height="50dp"
-        android:background="@color/Cyan">
+        android:background="@color/colorPrimary">
         <TextView
             android:id="@+id/Title"
             android:layout_width="fill_parent"
@@ -25,7 +25,7 @@
         android:orientation="vertical">
         <LinearLayout
             android:id="@+id/first_setting_fragment"
-            android:background="@color/Cyan"
+            android:background="@color/colorPrimary"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -37,7 +37,7 @@
             android:orientation="horizontal">
             <Button
                 android:id="@+id/b1"
-                android:background="@color/Cyan"
+                android:background="@color/colorPrimary"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -45,7 +45,7 @@
                 android:textColor="@color/white"/>
             <Button
                 android:id="@+id/b2"
-                android:background="@color/Cyan"
+                android:background="@color/colorPrimary"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"

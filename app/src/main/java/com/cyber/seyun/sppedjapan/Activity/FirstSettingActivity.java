@@ -40,9 +40,7 @@ public class FirstSettingActivity extends FragmentActivity implements View.OnCli
 
     public void fragmentReplace(int reqNewFragmentIndex){
         android.support.v4.app.Fragment newFragment = null;
-
         newFragment = getFragment(reqNewFragmentIndex);
-
 
         final android.support.v4.app.FragmentTransaction transaction = getSupportFragmentManager().beginTransaction().replace(R.id.first_setting_fragment,newFragment);
         transaction.commit();

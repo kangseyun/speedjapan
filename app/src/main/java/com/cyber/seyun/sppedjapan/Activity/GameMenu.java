@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -13,7 +14,7 @@ import android.widget.TextView;
 import com.cyber.seyun.sppedjapan.Model.GameItem;
 import com.cyber.seyun.sppedjapan.R;
 
-public class GameMenu extends Activity implements View.OnClickListener {
+public class GameMenu extends AppCompatActivity implements View.OnClickListener {
     private Button BackButton,up,down;
     private Intent PageMove;
     private TextView GameStart,GameStart2,timer;

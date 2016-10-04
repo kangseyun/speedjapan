@@ -10,7 +10,7 @@
         android:id="@+id/layout_title"
         android:layout_width="fill_parent"
         android:layout_height="50dp"
-        android:background="@color/Cyan">
+        android:background="@color/colorPrimary">
         <Button
             android:id="@+id/LeftMenuButton"
             android:layout_width="wrap_content"
@@ -33,7 +33,7 @@
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:background="@color/Cyan"
+        android:background="@color/colorPrimary"
         android:orientation="vertical">
         <RelativeLayout
             android:layout_width="fill_parent"
@@ -46,7 +46,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:background="@color/Cyan"
+                android:background="@color/colorPrimary"
                 android:text="@string/히라가나"
                 android:textColor="@color/white"
                 android:textSize="50dp"
@@ -72,7 +72,7 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:textColor="@color/white"
-                android:background="@color/Cyan"
+                android:background="@color/colorPrimary"
                 android:text="@string/가타카나"
                 android:textSize="50dp"
                 />

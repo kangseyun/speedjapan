@@ -2,12 +2,13 @@ package com.cyber.seyun.sppedjapan.Activity;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 
 import com.cyber.seyun.sppedjapan.R;
 
-public class WordActivity extends Activity {
+public class WordActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

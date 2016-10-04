@@ -3,6 +3,7 @@ package com.cyber.seyun.sppedjapan.Activity;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
@@ -15,7 +16,7 @@ import com.cyber.seyun.sppedjapan.R;
 
 import java.util.ArrayList;
 
-public class SettingActivity extends Activity implements View.OnClickListener{
+public class SettingActivity extends AppCompatActivity implements View.OnClickListener{
     private ListView listView;
     private ListviewAdapter mAdapter;
     private Button back;
@@ -25,8 +26,6 @@ public class SettingActivity extends Activity implements View.OnClickListener{
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_setting);
-
-
         init();
     }
 
@@ -62,13 +61,13 @@ public class SettingActivity extends Activity implements View.OnClickListener{
     @Override
     public void onClick(View v) {
         int id = v.getId();
-
         switch (id)
         {
             case R.id.setting_back:
                 PageMove = new Intent(SettingActivity.this,MainActivity.class);
                 break;
         }
+        
         startActivity(PageMove);
     }
 }

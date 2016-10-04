@@ -7,10 +7,9 @@ import java.util.Random;
  */
 public class Until {
 
-    public int getRandom(int max,int offset)
-    {
+    public int getRandom(int max,int offset) {
         Random mRand = new Random();
-        int Result= mRand.nextInt(max) + offset;
+        int Result = mRand.nextInt(max) + offset;
         return Result;
     }
 }

@@ -23,14 +23,19 @@ public class Intro extends Activity {
         DBInit DBCreate = new DBInit(this);
         try {
             DBCreate.createDataBase();
-        }catch (Exception e){}
+        } catch (Exception e) {
+
+        } finally {
+            DBCreate.close();
+        }
 
 
-        intent = new Intent(Intro.this, FirstSettingActivity.class);
+
         Handler handler = new Handler();
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
+                intent = new Intent(Intro.this, FirstSettingActivity.class);
                 startActivity(intent);
                 finish();
             }
