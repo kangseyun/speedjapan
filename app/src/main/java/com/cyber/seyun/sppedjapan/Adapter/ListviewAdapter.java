@@ -54,7 +54,7 @@ public class ListviewAdapter extends BaseAdapter {
         LayoutInflater inflater = (LayoutInflater) mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         convertView = inflater.inflate(R.layout.listview_test,parent,false);
 
-        text1 = (TextView)convertView.findViewById(R.id.listview_test1);
+//        text1 = (TextView)convertView.findViewById(R.id.listview_test1);
 
 
         text1.setText(item.get(position).menu1);

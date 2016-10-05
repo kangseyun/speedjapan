@@ -136,7 +136,7 @@
                 android:gravity="center"
                 android:layout_height="fill_parent">
                 <TextView
-                    android:id="@+id/test3"
+                    android:id="@+id/dic"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textColor="@color/white"
@@ -151,7 +151,7 @@
                     android:textColor="@color/white"
                     android:text="사전"
                     android:textSize="15dp"
-                    android:layout_below="@+id/test3"/>
+                    android:layout_below="@+id/dic"/>
             </RelativeLayout>
             <RelativeLayout
                 android:background="@color/Cyan"

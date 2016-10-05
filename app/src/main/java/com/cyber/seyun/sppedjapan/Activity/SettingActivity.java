@@ -19,8 +19,8 @@ import com.cyber.seyun.sppedjapan.R;
 import java.util.ArrayList;
 
 public class SettingActivity extends AppCompatActivity implements View.OnClickListener{
-    private ListView listView;
-    private ListviewAdapter mAdapter;
+//    private ListView listView;
+//    private ListviewAdapter mAdapter;
     private Toolbar toolbar;
     ArrayList<String> data = new ArrayList<>();
 
@@ -34,8 +34,8 @@ public class SettingActivity extends AppCompatActivity implements View.OnClickLi
     private void init()
     {
         toolbarSetup();
-        find();
-        setAdater();
+//        find();
+//        setAdater();
     }
 
     private void toolbarSetup() {
@@ -47,25 +47,25 @@ public class SettingActivity extends AppCompatActivity implements View.OnClickLi
         getSupportActionBar().setDisplayShowHomeEnabled(true);
     }
 
-    private void setAdater()
-    {
-        mAdapter = new ListviewAdapter(this);
-        mAdapter.AddItem(new ListViewSetting("켜자마자 단어","셋팅","test"));
-        mAdapter.AddItem(new ListViewSetting("초기화 ","언어셋팅","test"));
-        mAdapter.AddItem(new ListViewSetting("Setting","셋팅","test"));
+//    private void setAdater()
+//    {
+//        mAdapter = new ListviewAdapter(this);
+//        mAdapter.AddItem(new ListViewSetting("켜자마자 단어","셋팅","test"));
+//        mAdapter.AddItem(new ListViewSetting("초기화 ","언어셋팅","test"));
+//        mAdapter.AddItem(new ListViewSetting("Setting","셋팅","test"));
+//
+//        listView.setAdapter(mAdapter);
+//        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+//            @Override
+//            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+//
+//            }
+//        });
+//    }
 
-        listView.setAdapter(mAdapter);
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-
-            }
-        });
-    }
-
-    private void find(){
-        listView = (ListView)findViewById(R.id.Setting_Listview);
-    }
+//    private void find(){
+//        listView = (ListView)findViewById(R.id.Setting_Listview);
+//    }
 
     @Override
     public void onClick(View v) {

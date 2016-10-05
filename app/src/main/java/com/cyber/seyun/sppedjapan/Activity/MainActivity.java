@@ -11,7 +11,7 @@ import android.widget.TextView;
 import com.cyber.seyun.sppedjapan.R;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
-    private TextView GameMenu, setting, Word;
+    private TextView GameMenu, setting, Word, Dic;
     private Intent PageMove;
     private Toolbar toolbar;
     private String TAG = MainActivity.class.getSimpleName();
@@ -42,9 +42,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         GameMenu = (TextView) findViewById(R.id.button1);
         Word = (TextView) findViewById(R.id.test123);
         setting = (TextView) findViewById(R.id.setting);
+        Dic = (TextView) findViewById(R.id.dic);
         setting.setOnClickListener(this);
         GameMenu.setOnClickListener(this);
         Word.setOnClickListener(this);
+        Dic.setOnClickListener(this);
     }
 
     @Override
@@ -59,6 +61,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.setting:
                 PageMove = new Intent(MainActivity.this, SettingActivity.class);
+                break;
+            case R.id.dic:
+                PageMove = new Intent(MainActivity.this, DicActivity.class);
                 break;
         }
         startActivity(PageMove);
