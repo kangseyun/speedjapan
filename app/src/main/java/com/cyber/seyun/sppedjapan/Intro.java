@@ -35,7 +35,7 @@ public class Intro extends Activity {
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
-                intent = new Intent(Intro.this, FirstSettingActivity.class);
+                intent = new Intent(Intro.this, MainActivity.class);
                 startActivity(intent);
                 finish();
             }

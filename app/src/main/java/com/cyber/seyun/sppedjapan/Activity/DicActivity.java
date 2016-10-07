@@ -4,11 +4,18 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ListView;
 
+import com.cyber.seyun.sppedjapan.Adapter.ListviewAdapter;
+import com.cyber.seyun.sppedjapan.Model.ListViewSetting;
 import com.cyber.seyun.sppedjapan.R;
 
 public class DicActivity extends AppCompatActivity {
     private Toolbar toolbar;
+    private ListView listView;
+    private ListviewAdapter mAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,16 +26,27 @@ public class DicActivity extends AppCompatActivity {
 
 
     private void init() {
-        toolbarSetup();
+        find();
+        setAdater();
     }
 
-    private void toolbarSetup() {
-        toolbar = (Toolbar) findViewById(R.id.toolbar);
-        toolbar.setTitle("사전");
-        toolbar.setTitleTextColor(getResources().getColor(R.color.white));
-        setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setDisplayShowHomeEnabled(true);
+    private void setAdater() {
+        mAdapter = new ListviewAdapter(this);
+        mAdapter.AddItem(new ListViewSetting("켜자마자 단어", "셋팅"));
+        mAdapter.AddItem(new ListViewSetting("초기화 ", "언어셋팅"));
+        mAdapter.AddItem(new ListViewSetting("Setting", "셋팅"));
+
+        listView.setAdapter(mAdapter);
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+            }
+        });
+    }
+
+    private void find() {
+        listView = (ListView) findViewById(R.id.tmpdiclistview);
     }
 
     @Override

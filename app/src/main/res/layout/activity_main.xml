@@ -24,7 +24,7 @@
             <RelativeLayout
                 android:background="@color/Cyan"
                 android:gravity="center"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_weight="1"
                 android:layout_height="fill_parent">
 
@@ -47,15 +47,15 @@
             </RelativeLayout>
             <RelativeLayout
                 android:background="@color/Cyan"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:gravity="center"
                 android:layout_weight="1"
                 android:layout_height="fill_parent">
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="ひら/ガタ"
-                    android:id="@+id/test123"
+                    android:text="たんご/単語"
+                    android:id="@+id/main_word"
                     android:textSize="30dp"
                     android:background="@color/Cyan"
                     android:textColor="@color/white"/>
@@ -64,7 +64,7 @@
                     android:layout_height="wrap_content"
                     android:textColor="@color/white"
                     android:text="단어"
-                    android:layout_below="@+id/test123"
+                    android:layout_below="@+id/main_word"
                     android:textSize="15dp"/>
             </RelativeLayout>
         </LinearLayout>
@@ -75,9 +75,10 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:layout_weight="1">
+
             <RelativeLayout
                 android:background="@color/Cyan"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_weight="1"
                 android:gravity="center"
                 android:layout_height="fill_parent">
@@ -86,21 +87,22 @@
                     android:layout_height="wrap_content"
                     android:textColor="@color/white"
                     android:background="@color/Cyan"
-                    android:text="ふへほ "
+                    android:text="はんじもの"
                     android:gravity="center"
-                    android:id="@+id/test1"
+                    android:id="@+id/main_puzzle"
                     android:textSize="30dp"
                     />
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/test1"
+                    android:layout_below="@+id/main_puzzle"
                     android:textColor="@color/white"
                     android:text="퍼즐"/>
             </RelativeLayout>
+
             <RelativeLayout
             android:background="@color/Cyan"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_weight="1"
             android:gravity="center"
             android:layout_height="fill_parent">
@@ -110,14 +112,14 @@
                 android:id="@+id/test2"
                 android:textColor="@color/white"
                 android:background="@color/Cyan"
-                android:text="ひら/ガタ"
+                android:text="漢字"
                 android:gravity="center"
                 android:textSize="30dp"
                 />
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="켜자마자 단어"
+                    android:text="한자"
                     android:textColor="@color/white"
                     android:layout_below="@+id/test2"/>
         </RelativeLayout>
@@ -131,7 +133,7 @@
 
             <RelativeLayout
                 android:background="@color/Cyan"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_weight="1"
                 android:gravity="center"
                 android:layout_height="fill_parent">
@@ -155,7 +157,7 @@
             </RelativeLayout>
             <RelativeLayout
                 android:background="@color/Cyan"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_weight="1"
                 android:gravity="center"
                 android:layout_height="fill_parent">

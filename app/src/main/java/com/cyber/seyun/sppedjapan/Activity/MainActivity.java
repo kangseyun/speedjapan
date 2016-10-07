@@ -11,7 +11,7 @@ import android.widget.TextView;
 import com.cyber.seyun.sppedjapan.R;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
-    private TextView GameMenu, setting, Word, Dic;
+    private TextView GameMenu, setting, Word, Dic, Puzz;
     private Intent PageMove;
     private Toolbar toolbar;
     private String TAG = MainActivity.class.getSimpleName();
@@ -34,15 +34,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         toolbar.setTitle("스피드 일본어!");
         toolbar.setTitleTextColor(getResources().getColor(R.color.white));
         setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setDisplayShowHomeEnabled(true);
     }
 
     private void findLayout() {
         GameMenu = (TextView) findViewById(R.id.button1);
-        Word = (TextView) findViewById(R.id.test123);
+        Word = (TextView) findViewById(R.id.main_word);
         setting = (TextView) findViewById(R.id.setting);
         Dic = (TextView) findViewById(R.id.dic);
+        Puzz = (TextView) findViewById(R.id.main_puzzle);
+        Puzz.setOnClickListener(this);
         setting.setOnClickListener(this);
         GameMenu.setOnClickListener(this);
         Word.setOnClickListener(this);
@@ -56,8 +56,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.button1:
                 PageMove = new Intent(MainActivity.this, GameMenu.class);
                 break;
-            case R.id.test123:
+            case R.id.main_word:
                 PageMove = new Intent(MainActivity.this, WordActivity.class);
+                break;
+            case R.id.main_puzzle:
                 break;
             case R.id.setting:
                 PageMove = new Intent(MainActivity.this, SettingActivity.class);

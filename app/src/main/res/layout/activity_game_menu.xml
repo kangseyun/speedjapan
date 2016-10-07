@@ -70,6 +70,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/time_Down"
+                android:background="@color/colorPrimary"
+                android:textColor="#FFFFFF"
                 android:layout_weight="1"
                 android:text="down"
                 />
@@ -83,6 +85,8 @@
                 android:textSize="25dp"
                 android:text="1"/>
             <Button
+                android:background="@color/colorPrimary"
+                android:textColor="#FFFFFF"
                 android:layout_width="wrap_content"
                 android:layout_weight="1"
                 android:id="@+id/time_Up"

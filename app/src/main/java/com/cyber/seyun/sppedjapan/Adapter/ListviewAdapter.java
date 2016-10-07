@@ -1,11 +1,9 @@
 package com.cyber.seyun.sppedjapan.Adapter;
 
 import android.content.Context;
-import android.database.DataSetObserver;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Adapter;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
@@ -13,15 +11,13 @@ import com.cyber.seyun.sppedjapan.Model.ListViewSetting;
 import com.cyber.seyun.sppedjapan.R;
 
 import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
 
 /**
  * Created by 590 on 2015-12-29.
  */
 public class ListviewAdapter extends BaseAdapter {
     private Context mContext;
-    private TextView text1,text2,text3;
+    private TextView japan, korean;
     private ArrayList<ListViewSetting> item;
     public ListviewAdapter(Context mContext){
         this.mContext = mContext;
@@ -52,13 +48,12 @@ public class ListviewAdapter extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         LayoutInflater inflater = (LayoutInflater) mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        convertView = inflater.inflate(R.layout.listview_test,parent,false);
+        convertView = inflater.inflate(R.layout.dic_item,parent,false);
 
-//        text1 = (TextView)convertView.findViewById(R.id.listview_test1);
-
-
-        text1.setText(item.get(position).menu1);
-
+        japan = (TextView)convertView.findViewById(R.id.dic_title);
+        japan.setText(item.get(position).japan);
+        korean = (TextView)convertView.findViewById(R.id.dic_hint);
+        korean.setText(item.get(position).korean);
 
 
         return convertView;

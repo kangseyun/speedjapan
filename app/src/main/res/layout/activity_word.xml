@@ -5,20 +5,7 @@
     android:orientation="vertical"
     tools:context="com.cyber.seyun.sppedjapan.Activity.MainActivity">
     <!-- Layout Title -->
-    <LinearLayout
-        android:id="@+id/layout_title"
-        android:layout_width="fill_parent"
-        android:layout_height="50dp"
-        android:background="@color/Cyan">
-        <TextView
-            android:id="@+id/Title"
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:gravity="center"
-            android:text="WORD"
-            android:textSize="25dp"
-            android:textColor="@color/white"/>
-    </LinearLayout>
+    <include layout="@layout/toolbar"/>
 
     <!-- Layout Main -->
     <LinearLayout

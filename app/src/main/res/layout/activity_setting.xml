@@ -15,6 +15,7 @@
         android:paddingBottom="12dp"
         android:layout_height="wrap_content" />
     <LinearLayout
+        android:clickable="true"
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="72dp"
@@ -79,4 +80,35 @@
         android:layout_width="match_parent"
         android:layout_height="0.8dp"
         android:background="#BDBDBD"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="88dp"
+        android:orientation="horizontal"
+        android:layout_marginRight="5dp"
+        android:paddingTop="16dp"
+        android:paddingLeft="16dp">
+        <android.support.v7.widget.AppCompatCheckBox
+            android:theme="@style/MyCheckBox"
+            android:layout_width="72dp"
+            android:layout_height="wrap_content"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <TextView
+                android:textColor="#333"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:fontFamily="sans-serif"
+                android:text="켜자마마 단어" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:fontFamily="sans-serif"
+                android:text="잠금화면 해제하면 단어공부창이떠서 공부 할 수 있습니다."/>
+        </LinearLayout>
+
+    </LinearLayout>
 </LinearLayout>
