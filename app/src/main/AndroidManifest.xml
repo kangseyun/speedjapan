@@ -41,7 +41,8 @@
             android:name=".Activity.FirstSettingActivity"
             android:label="@string/title_activity_first_setting" />
         <activity android:name=".Activity.DicActivity" />
-        <activity android:name=".Activity.PuzzleActivity"></activity>
+        <activity android:name=".Activity.PuzzleActivity" />
+        <activity android:name=".Activity.ChineseActivity"></activity>
     </application>
 
 </manifest>

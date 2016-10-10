@@ -54,7 +54,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="たんご/単語"
+                    android:text="たんご"
                     android:id="@+id/main_word"
                     android:textSize="30dp"
                     android:background="@color/Cyan"
@@ -109,7 +109,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/test2"
+                android:id="@+id/main_chinese"
                 android:textColor="@color/white"
                 android:background="@color/Cyan"
                 android:text="漢字"
@@ -121,7 +121,7 @@
                     android:layout_height="wrap_content"
                     android:text="한자"
                     android:textColor="@color/white"
-                    android:layout_below="@+id/test2"/>
+                    android:layout_below="@+id/main_chinese"/>
         </RelativeLayout>
         </LinearLayout>
 
@@ -167,7 +167,7 @@
                     android:textColor="@color/white"
                     android:background="@color/Cyan"
                     android:id="@+id/setting"
-                    android:text="Setting"
+                    android:text="せってい"
                     android:gravity="center"
                     android:textSize="30dp"
                     />

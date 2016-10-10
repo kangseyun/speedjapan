@@ -32,8 +32,8 @@ public class DicActivity extends AppCompatActivity {
 
     private void setAdater() {
         mAdapter = new ListviewAdapter(this);
-        mAdapter.AddItem(new ListViewSetting("켜자마자 단어", "셋팅"));
-        mAdapter.AddItem(new ListViewSetting("초기화 ", "언어셋팅"));
+        mAdapter.AddItem(new ListViewSetting("こんにちは", "안녕하세요"));
+        mAdapter.AddItem(new ListViewSetting("ありがとうございます ", "감사합니다."));
         mAdapter.AddItem(new ListViewSetting("Setting", "셋팅"));
 
         listView.setAdapter(mAdapter);

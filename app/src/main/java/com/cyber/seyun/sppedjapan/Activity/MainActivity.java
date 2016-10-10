@@ -11,7 +11,7 @@ import android.widget.TextView;
 import com.cyber.seyun.sppedjapan.R;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
-    private TextView GameMenu, setting, Word, Dic, Puzz;
+    private TextView GameMenu, setting, Word, Dic, Puzz, Chinese;
     private Intent PageMove;
     private Toolbar toolbar;
     private String TAG = MainActivity.class.getSimpleName();
@@ -42,6 +42,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setting = (TextView) findViewById(R.id.setting);
         Dic = (TextView) findViewById(R.id.dic);
         Puzz = (TextView) findViewById(R.id.main_puzzle);
+        Chinese = (TextView) findViewById(R.id.main_chinese);
+        Chinese.setOnClickListener(this);
         Puzz.setOnClickListener(this);
         setting.setOnClickListener(this);
         GameMenu.setOnClickListener(this);
@@ -60,6 +62,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 PageMove = new Intent(MainActivity.this, WordActivity.class);
                 break;
             case R.id.main_puzzle:
+                PageMove = new Intent(MainActivity.this, PuzzleActivity.class);
+                break;
+            case R.id.main_chinese:
+                PageMove = new Intent(MainActivity.this, ChineseActivity.class);
                 break;
             case R.id.setting:
                 PageMove = new Intent(MainActivity.this, SettingActivity.class);

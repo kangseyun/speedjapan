@@ -103,6 +103,7 @@
                 android:fontFamily="sans-serif"
                 android:text="켜자마마 단어" />
             <TextView
+                android:layout_marginRight="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="14sp"
