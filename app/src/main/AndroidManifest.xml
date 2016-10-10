@@ -8,11 +8,16 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme">
         <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-
         <activity
             android:name=".Intro"
             android:label="@string/app_name"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+            <receiver android:name=".Receiver.ScreenReceiver">
+                <intent-filter>
+                    <action android:name="android.intent.action.SCREEN_ON"/>
+                    <action android:name="android.intent.action.SCREEN_OFF"/>
+                </intent-filter>
+            </receiver>
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
