@@ -62,7 +62,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 PageMove = new Intent(MainActivity.this, WordActivity.class);
                 break;
             case R.id.main_puzzle:
-                PageMove = new Intent(MainActivity.this, PuzzleActivity.class);
+                PageMove = new Intent(MainActivity.this, PuzzleMenuActivity.class);
                 break;
             case R.id.main_chinese:
                 PageMove = new Intent(MainActivity.this, ChineseActivity.class);

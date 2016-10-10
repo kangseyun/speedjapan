@@ -11,7 +11,7 @@
         android:layout_width="fill_parent"
         android:layout_height="50dp"
         android:gravity="center"
-        android:text="RESULT"
+        android:text="결과화면"
         android:textSize="25dp"
         android:textColor="@color/white"/>
 
@@ -37,7 +37,8 @@
         android:gravity="center">
         <LinearLayout
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
             <Button
                 android:id="@+id/ResultViewBackButton"
                 android:layout_width="250dp"
@@ -48,6 +49,12 @@
                 android:textColor="#FFFFFF"
                 android:background="#37474F"
                 />
+            <Button
+                android:id="@+id/ResultViewDetail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="결과보기"
+                android:layout_gravity="center"/>
         </LinearLayout>
     </RelativeLayout>
 </LinearLayout>
