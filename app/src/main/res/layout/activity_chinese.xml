@@ -9,6 +9,7 @@
     tools:context="com.cyber.seyun.sppedjapan.Activity.ChineseActivity">
     <include layout="@layout/toolbar" />
     <RelativeLayout
+        android:id="@+id/chinese_1"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
@@ -34,6 +35,7 @@
     </RelativeLayout>
 
     <RelativeLayout
+        android:id="@+id/chinese_2"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
@@ -58,6 +60,7 @@
             android:layout_below="@+id/gameMenuGameStart2"/>
     </RelativeLayout>
     <RelativeLayout
+        android:id="@+id/chinese_3"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"

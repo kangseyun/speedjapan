@@ -8,22 +8,25 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme">
         <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+        <receiver android:name=".Receiver.ScreenReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.SCREEN_ON" />
+                <action android:name="android.intent.action.SCREEN_OFF" />
+            </intent-filter>
+        </receiver>
+
+        <service android:name=".Receiver.ScreenService" />
+
         <activity
             android:name=".Intro"
             android:label="@string/app_name"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-            <receiver android:name=".Receiver.ScreenReceiver">
-                <intent-filter>
-                    <action android:name="android.intent.action.SCREEN_ON"/>
-                    <action android:name="android.intent.action.SCREEN_OFF"/>
-                </intent-filter>
-            </receiver>
+            android:theme="@style/AppTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity
             android:name=".Activity.MainActivity"
             android:label="@string/title_activity_main" />
@@ -48,7 +51,11 @@
         <activity android:name=".Activity.DicActivity" />
         <activity android:name=".Activity.PuzzleActivity" />
         <activity android:name=".Activity.ChineseActivity" />
-        <activity android:name=".Activity.PuzzleMenuActivity"></activity>
+        <activity android:name=".Activity.PuzzleMenuActivity" />
+        <activity android:name=".Activity.ScreenWordActivity"
+            android:theme="@style/AppTheme">
+
+        </activity>
     </application>
 
 </manifest>

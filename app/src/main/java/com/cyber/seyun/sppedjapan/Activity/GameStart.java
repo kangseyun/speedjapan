@@ -37,6 +37,7 @@ public class GameStart extends AppCompatActivity implements View.OnClickListener
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game_start);
+
         init();
     }
 
@@ -85,7 +86,38 @@ public class GameStart extends AppCompatActivity implements View.OnClickListener
     }
 
     private String titleSetup() {
-        return GameItem.Flag == 1 ? "히라가나" : "가타카나";
+        String title = null;
+        switch (GameItem.Flag){
+            case 1:
+                title = "히라가나";
+                break;
+            case 2:
+                title = "가타카나";
+                break;
+            case 3:
+                title = "사물";
+                break;
+            case 4:
+                title = "동물";
+                break;
+            case 5:
+                title = "사람";
+                break;
+            case 6:
+                title = "날씨";
+                break;
+            case 7:
+                title = "초급한자";
+                break;
+            case 8:
+                title = "중급한자";
+                break;
+            case 9:
+                title = "고급한자";
+                break;
+        }
+        //return GameItem.Flag == 1 ? "히라가나" : "가타카나";
+        return title;
     }
 
     class CountTimer extends Thread implements Runnable {
@@ -143,6 +175,7 @@ public class GameStart extends AppCompatActivity implements View.OnClickListener
     @Override
     public void onClick(View v) {
         int id = v.getId();
+
         switch (id) {
             case R.id.gamestartButton1:
                 ButtonClick(button1);

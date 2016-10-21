@@ -27,22 +27,21 @@ public class FirstSettingStartViewFragment extends android.support.v4.app.Fragme
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View v =  inflater.inflate(R.layout.fragment_first_setting_start_view, container, false);
-        button = (Button)v.findViewById(R.id.first_setting_start_button);
+        View v = inflater.inflate(R.layout.fragment_first_setting_start_view, container, false);
+        button = (Button) v.findViewById(R.id.first_setting_start_button);
         button.setOnClickListener(this);
         return v;
     }
 
-    private void buttonClick(){
-        if(flag == 0){
+    private void buttonClick() {
+        if (flag == 0) {
             button.setText("OFF");
             flag = 1;
-            FirstSettingModel.FistView = 0;
-        }
-        else{
+            FirstSettingModel.FistView = false;
+        } else {
             button.setText("ON");
             flag = 0;
-            FirstSettingModel.FistView = 1;
+            FirstSettingModel.FistView = true;
         }
     }
 
@@ -50,7 +49,7 @@ public class FirstSettingStartViewFragment extends android.support.v4.app.Fragme
     @Override
     public void onClick(View v) {
         int id = v.getId();
-        switch (id){
+        switch (id) {
             case R.id.first_setting_start_button:
                 buttonClick();
                 break;

@@ -12,60 +12,63 @@
         android:id="@+id/layout_main"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:orientation="vertical"
         android:background="#9E9E9E"
-        >
+        android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_weight="1">
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
             <RelativeLayout
-                android:background="@color/Cyan"
-                android:gravity="center"
                 android:layout_width="match_parent"
+                android:layout_height="fill_parent"
                 android:layout_weight="1"
-                android:layout_height="fill_parent">
+                android:background="@color/Cyan"
+                android:gravity="center">
 
                 <TextView
-                    android:id="@+id/button1"
+                    android:id="@+id/main_basic_word"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="@color/Cyan"
-                    android:textColor="@color/white"
-                    android:text="ひら/ガタ"
                     android:gravity="center"
-                    android:textSize="30dp"
-                    />
+                    android:text="ひら/ガタ"
+                    android:textColor="@color/white"
+                    android:textSize="30dp" />
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/white"
+                    android:layout_below="@+id/main_basic_word"
                     android:text="히라가나/가타카나"
-                    android:layout_below="@+id/button1"/>
+                    android:textColor="@color/white" />
             </RelativeLayout>
+
             <RelativeLayout
-                android:background="@color/Cyan"
                 android:layout_width="match_parent"
-                android:gravity="center"
+                android:layout_height="fill_parent"
                 android:layout_weight="1"
-                android:layout_height="fill_parent">
+                android:background="@color/Cyan"
+                android:gravity="center">
+
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="たんご"
                     android:id="@+id/main_word"
-                    android:textSize="30dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:background="@color/Cyan"
-                    android:textColor="@color/white"/>
+                    android:text="たんご"
+                    android:textColor="@color/white"
+                    android:textSize="30dp" />
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/white"
-                    android:text="단어"
                     android:layout_below="@+id/main_word"
-                    android:textSize="15dp"/>
+                    android:text="단어"
+                    android:textColor="@color/white"
+                    android:textSize="15dp" />
             </RelativeLayout>
         </LinearLayout>
 
@@ -73,111 +76,116 @@
         <LinearLayout
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_weight="1">
+            android:layout_weight="1"
+            android:orientation="horizontal">
 
             <RelativeLayout
-                android:background="@color/Cyan"
                 android:layout_width="match_parent"
+                android:layout_height="fill_parent"
                 android:layout_weight="1"
-                android:gravity="center"
-                android:layout_height="fill_parent">
+                android:background="@color/Cyan"
+                android:gravity="center">
+
                 <TextView
+                    android:id="@+id/main_puzzle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/white"
                     android:background="@color/Cyan"
-                    android:text="はんじもの"
                     android:gravity="center"
-                    android:id="@+id/main_puzzle"
-                    android:textSize="30dp"
-                    />
+                    android:text="はんじもの"
+                    android:textColor="@color/white"
+                    android:textSize="30dp" />
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/main_puzzle"
-                    android:textColor="@color/white"
-                    android:text="퍼즐"/>
+                    android:text="퍼즐"
+                    android:textColor="@color/white" />
             </RelativeLayout>
 
             <RelativeLayout
-            android:background="@color/Cyan"
-            android:layout_width="match_parent"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:layout_height="fill_parent">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/main_chinese"
-                android:textColor="@color/white"
+                android:layout_width="match_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
                 android:background="@color/Cyan"
-                android:text="漢字"
-                android:gravity="center"
-                android:textSize="30dp"
-                />
+                android:gravity="center">
+
+                <TextView
+                    android:id="@+id/main_chinese"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@color/Cyan"
+                    android:gravity="center"
+                    android:text="漢字"
+                    android:textColor="@color/white"
+                    android:textSize="30dp" />
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_below="@+id/main_chinese"
                     android:text="한자"
-                    android:textColor="@color/white"
-                    android:layout_below="@+id/main_chinese"/>
-        </RelativeLayout>
+                    android:textColor="@color/white" />
+            </RelativeLayout>
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_weight="1">
+            android:layout_weight="1"
+            android:orientation="horizontal">
 
             <RelativeLayout
-                android:background="@color/Cyan"
                 android:layout_width="match_parent"
+                android:layout_height="fill_parent"
                 android:layout_weight="1"
-                android:gravity="center"
-                android:layout_height="fill_parent">
+                android:background="@color/Cyan"
+                android:gravity="center">
+
                 <TextView
-                    android:id="@+id/dic"
+                    android:id="@+id/main_dic"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/white"
                     android:background="@color/Cyan"
+                    android:gravity="center"
                     android:text="ひら/ガタ"
-                    android:gravity="center"
-                    android:textSize="30dp"
-                    />
+                    android:textColor="@color/white"
+                    android:textSize="30dp" />
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/white"
+                    android:layout_below="@+id/main_dic"
                     android:text="사전"
-                    android:textSize="15dp"
-                    android:layout_below="@+id/dic"/>
+                    android:textColor="@color/white"
+                    android:textSize="15dp" />
             </RelativeLayout>
+
             <RelativeLayout
-                android:background="@color/Cyan"
                 android:layout_width="match_parent"
+                android:layout_height="fill_parent"
                 android:layout_weight="1"
-                android:gravity="center"
-                android:layout_height="fill_parent">
+                android:background="@color/Cyan"
+                android:gravity="center">
+
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textColor="@color/white"
-                    android:background="@color/Cyan"
                     android:id="@+id/setting"
-                    android:text="せってい"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@color/Cyan"
                     android:gravity="center"
-                    android:textSize="30dp"
-                    />
+                    android:text="せってい"
+                    android:textColor="@color/white"
+                    android:textSize="30dp" />
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/white"
+                    android:layout_below="@+id/setting"
                     android:text="설정"
-                    android:textSize="15dp"
-                    android:layout_below="@+id/setting"/>
+                    android:textColor="@color/white"
+                    android:textSize="15dp" />
             </RelativeLayout>
 
         </LinearLayout>

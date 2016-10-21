@@ -13,6 +13,7 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.cyber.seyun.sppedjapan.R;
+import com.cyber.seyun.sppedjapan.Receiver.ScreenService;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     private TextView GameMenu, setting, Word, Dic, Puzz, Chinese;
@@ -42,10 +43,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void findLayout() {
-        GameMenu = (TextView) findViewById(R.id.button1);
+        GameMenu = (TextView) findViewById(R.id.main_basic_word);
         Word = (TextView) findViewById(R.id.main_word);
         setting = (TextView) findViewById(R.id.setting);
-        Dic = (TextView) findViewById(R.id.dic);
+        Dic = (TextView) findViewById(R.id.main_dic);
         Puzz = (TextView) findViewById(R.id.main_puzzle);
         Chinese = (TextView) findViewById(R.id.main_chinese);
         Chinese.setOnClickListener(this);
@@ -59,8 +60,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View v) {
         int id = v.getId();
+
         switch (id) {
-            case R.id.button1:
+            case R.id.main_basic_word:
                 PageMove = new Intent(MainActivity.this, GameMenu.class);
                 break;
             case R.id.main_word:
@@ -75,10 +77,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.setting:
                 PageMove = new Intent(MainActivity.this, SettingActivity.class);
                 break;
-            case R.id.dic:
+            case R.id.main_dic:
                 PageMove = new Intent(MainActivity.this, DicActivity.class);
                 break;
         }
+
         startActivity(PageMove);
     }
 }

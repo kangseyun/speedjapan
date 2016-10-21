@@ -5,6 +5,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.util.Log;
 
+import com.cyber.seyun.sppedjapan.Activity.ScreenWordActivity;
+
 /**
  * Created by vcs-server on 10/10/16.
  */
@@ -13,13 +15,10 @@ public class ScreenReceiver extends BroadcastReceiver {
     @Override
     public void onReceive(Context context, Intent intent) {
         // TODO Auto-generated method stub
-        Log.i("[BroadcastReceiver]", "MyReceiver");
-
         if (intent.getAction().equals(Intent.ACTION_SCREEN_ON)) {
-            Log.i("[BroadcastReceiver]", "Screen ON");
-        }
-        else if (intent.getAction().equals(Intent.ACTION_SCREEN_OFF)) {
-            Log.i("[BroadcastReceiver]", "Screen OFF");
+            Intent i = new Intent(context, ScreenWordActivity.class);
+            i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            context.startActivity(i);
         }
     }
 }

@@ -3,26 +3,39 @@ package com.cyber.seyun.sppedjapan.Activity;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.design.widget.CoordinatorLayout;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.ListView;
 import android.widget.TextView;
 
 import com.cyber.seyun.sppedjapan.Adapter.ListviewAdapter;
 import com.cyber.seyun.sppedjapan.Model.ListViewSetting;
 import com.cyber.seyun.sppedjapan.R;
+import com.cyber.seyun.sppedjapan.Reaml.SettingRealm;
+import com.cyber.seyun.sppedjapan.Receiver.ScreenService;
 
 import java.util.ArrayList;
 
+import io.realm.Realm;
+import io.realm.RealmConfiguration;
+import io.realm.RealmQuery;
+import io.realm.RealmResults;
+
 public class SettingActivity extends AppCompatActivity implements View.OnClickListener{
-//    private ListView listView;
-//    private ListviewAdapter mAdapter;
+    private CheckBox word_checkbox;
     private Toolbar toolbar;
-    ArrayList<String> data = new ArrayList<>();
+    private CoordinatorLayout layout;
+    private Realm realm;
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -33,13 +46,17 @@ public class SettingActivity extends AppCompatActivity implements View.OnClickLi
 
     private void init()
     {
+        RealmConfiguration realmConfig = new RealmConfiguration.Builder(getApplication()).build();
+        Realm.setDefaultConfiguration(realmConfig);
+        realm = Realm.getDefaultInstance();
+
         toolbarSetup();
-//        find();
-//        setAdater();
+        find();
     }
 
     private void toolbarSetup() {
         toolbar = (Toolbar) findViewById(R.id.toolbar);
+
         toolbar.setTitle("설정");
         toolbar.setTitleTextColor(getResources().getColor(R.color.white));
         setSupportActionBar(toolbar);
@@ -47,25 +64,52 @@ public class SettingActivity extends AppCompatActivity implements View.OnClickLi
         getSupportActionBar().setDisplayShowHomeEnabled(true);
     }
 
-//    private void setAdater()
-//    {
-//        mAdapter = new ListviewAdapter(this);
-//        mAdapter.AddItem(new ListViewSetting("켜자마자 단어","셋팅","test"));
-//        mAdapter.AddItem(new ListViewSetting("초기화 ","언어셋팅","test"));
-//        mAdapter.AddItem(new ListViewSetting("Setting","셋팅","test"));
-//
-//        listView.setAdapter(mAdapter);
-//        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-//            @Override
-//            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-//
-//            }
-//        });
-//    }
+    private void find(){
+        word_checkbox = (CheckBox) findViewById(R.id.setting_screenword_checkbox);
+        layout = (CoordinatorLayout) findViewById(R.id.layout_setting);
 
-//    private void find(){
-//        listView = (ListView)findViewById(R.id.Setting_Listview);
-//    }
+        word_checkbox.setChecked(ScreenWordCheck());
+        word_checkbox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                    switch (buttonView.getId()) {
+                        case R.id.setting_screenword_checkbox:
+                            ScreenWordSetting(isChecked);
+                            break;
+                    }
+            }
+        });
+    }
+
+    private void ScreenWordSetting(boolean checked) {
+        Intent i = new Intent(SettingActivity.this, ScreenService.class);
+        Snackbar snack;
+
+        if (checked) {
+            startService(i);
+            snack = Snackbar.make(layout, "켜자마자 단어가 실행됩니다.", Snackbar.LENGTH_SHORT);
+            setFlagScreenWorld(true);
+        } else {
+            stopService(i);
+            snack = Snackbar.make(layout, "켜자마자 단어가 실행되지않습니다.", Snackbar.LENGTH_SHORT);
+            setFlagScreenWorld(false);
+        }
+
+        snack.show();
+    }
+
+
+    private void setFlagScreenWorld(boolean flag) {
+        realm.beginTransaction();
+        SettingRealm result = realm.where(SettingRealm.class).findFirst();
+        result.setScreenWord(flag);
+        realm.commitTransaction();
+    }
+
+    private boolean ScreenWordCheck() {
+        SettingRealm query = realm.where(SettingRealm.class).findFirst();
+        return query.isScreenWord();
+    }
 
     @Override
     public void onClick(View v) {
@@ -82,5 +126,11 @@ public class SettingActivity extends AppCompatActivity implements View.OnClickLi
             default:
                 return super.onOptionsItemSelected(item);
         }
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        realm.close();
     }
 }

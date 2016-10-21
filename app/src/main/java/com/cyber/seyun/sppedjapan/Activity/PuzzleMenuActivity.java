@@ -7,12 +7,15 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
+import com.cyber.seyun.sppedjapan.Model.GameItem;
 import com.cyber.seyun.sppedjapan.R;
 
 public class PuzzleMenuActivity extends AppCompatActivity implements View.OnClickListener {
     private Toolbar toolbar;
-    private Button start;
+    private Button start, Level_up, Level_down;
+    private TextView level;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +32,11 @@ public class PuzzleMenuActivity extends AppCompatActivity implements View.OnClic
     private void findLayout() {
         start = (Button) findViewById(R.id.puzzle_start);
         start.setOnClickListener(this);
+        level = (TextView) findViewById(R.id.puzzle_level);
+        Level_up = (Button) findViewById(R.id.puzzle_level_up);
+        Level_down = (Button) findViewById(R.id.puzzle_level_down);
+        Level_up.setOnClickListener(this);
+        Level_down.setOnClickListener(this);
     }
 
     private void toolbarSetup() {
@@ -40,6 +48,13 @@ public class PuzzleMenuActivity extends AppCompatActivity implements View.OnClic
         getSupportActionBar().setDisplayShowHomeEnabled(true);
     }
 
+    private void GameLevel_UP() {
+        level.setText("LEVEL 2");
+    }
+
+    private void GameLevel_Down() {
+        level.setText("LEVEL 1");
+    }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -61,6 +76,12 @@ public class PuzzleMenuActivity extends AppCompatActivity implements View.OnClic
             case R.id.puzzle_start:
                 Intent i = new Intent(PuzzleMenuActivity.this, PuzzleActivity.class);
                 startActivity(i);
+                break;
+            case R.id.puzzle_level_down:
+                GameLevel_Down();
+                break;
+            case R.id.puzzle_level_up:
+                GameLevel_UP();
                 break;
         }
     }

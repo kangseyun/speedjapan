@@ -29,7 +29,7 @@
                 android:layout_height="fill_parent">
 
                 <TextView
-                    android:id="@+id/button1"
+                    android:id="@+id/word_button1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="@color/Cyan"
@@ -43,7 +43,7 @@
                     android:layout_height="wrap_content"
                     android:textColor="@color/white"
                     android:text="사물"
-                    android:layout_below="@+id/button1"/>
+                    android:layout_below="@+id/word_button1"/>
             </RelativeLayout>
             <RelativeLayout
                 android:background="@color/Cyan"
@@ -52,10 +52,10 @@
                 android:layout_weight="1"
                 android:layout_height="fill_parent">
                 <TextView
+                    android:id="@+id/word_button2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="ひら/ガタ"
-                    android:id="@+id/test1234"
                     android:textSize="30dp"
                     android:background="@color/Cyan"
                     android:textColor="@color/white"/>
@@ -64,7 +64,7 @@
                     android:layout_height="wrap_content"
                     android:textColor="@color/white"
                     android:text="동물"
-                    android:layout_below="@+id/test1234"
+                    android:layout_below="@+id/word_button2"
                     android:textSize="15dp"/>
             </RelativeLayout>
         </LinearLayout>
@@ -82,19 +82,19 @@
                 android:gravity="center"
                 android:layout_height="fill_parent">
                 <TextView
+                    android:id="@+id/word_button3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textColor="@color/white"
                     android:background="@color/Cyan"
-                    android:text="ふへほ "
+                    android:text="ふへほ"
                     android:gravity="center"
-                    android:id="@+id/test1"
                     android:textSize="30dp"
                     />
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/test1"
+                    android:layout_below="@+id/word_button3"
                     android:textColor="@color/white"
                     android:text="사람"/>
             </RelativeLayout>
@@ -105,9 +105,9 @@
                 android:gravity="center"
                 android:layout_height="fill_parent">
                 <TextView
+                    android:id="@+id/word_button4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/test2"
                     android:textColor="@color/white"
                     android:background="@color/Cyan"
                     android:text="ガら/タ"
@@ -119,7 +119,7 @@
                     android:layout_height="wrap_content"
                     android:text="날씨"
                     android:textColor="@color/white"
-                    android:layout_below="@+id/test2"/>
+                    android:layout_below="@+id/word_button4"/>
             </RelativeLayout>
         </LinearLayout>
 

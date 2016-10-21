@@ -1,12 +1,9 @@
 package com.cyber.seyun.sppedjapan.Activity;
 
-import android.app.Activity;
 import android.content.Intent;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -22,6 +19,7 @@ public class GameMenu extends AppCompatActivity implements View.OnClickListener 
     private Toolbar toolbar;
     private final int MAX = 15;
     private final int MIN = 0;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,7 +50,6 @@ public class GameMenu extends AppCompatActivity implements View.OnClickListener 
         GameStart = (TextView)findViewById(R.id.gameMenuGameStart);
         GameStart2 = (TextView)findViewById(R.id.gameMenuGameStart2);
 
-
         up = (Button)findViewById(R.id.time_Up);
         down = (Button)findViewById(R.id.time_Down);
         timer = (TextView)findViewById(R.id.game_menu_timer);
@@ -82,13 +79,13 @@ public class GameMenu extends AppCompatActivity implements View.OnClickListener 
         switch (id)
         {
             case R.id.gameMenuGameStart:
-                PageMove = new Intent(GameMenu.this,GameStart.class);
+                PageMove = new Intent(GameMenu.this, GameStart.class);
                 GameItem.Timer = false;
                 GameItem.Flag = 2;
                 startActivity(PageMove);
                 break;
             case R.id.gameMenuGameStart2:
-                PageMove = new Intent(GameMenu.this,GameStart.class);
+                PageMove = new Intent(GameMenu.this, GameStart.class);
                 GameItem.Timer = false;
                 GameItem.Flag = 1;
                 startActivity(PageMove);

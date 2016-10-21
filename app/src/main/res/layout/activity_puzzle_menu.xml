@@ -11,12 +11,14 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
+        android:layout_weight="1"
         android:layout_margin="30dp">
         <TextView
+            android:id="@+id/puzzle_level"
             android:layout_width="match_parent"
             android:layout_height="200dp"
             android:textSize="60dp"
-            android:layout_marginTop="50dp"
+            android:layout_marginTop="10dp"
             android:gravity="center"
             android:textStyle="bold"
             android:text="LEVEL 1"/>
@@ -38,10 +40,35 @@
 
         <Button
             android:id="@+id/puzzle_start"
+            android:background="@color/colorPrimary"
+            android:textColor="@color/white"
             android:layout_marginTop="50dp"
             android:layout_width="200dp"
             android:layout_height="50dp"
             android:layout_gravity="center"
             android:text="START"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:background="@color/colorPrimary"
+        android:orientation="horizontal">
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/puzzle_level_down"
+            android:background="@color/colorPrimary"
+            android:textColor="#FFFFFF"
+            android:layout_weight="1"
+            android:text="down"
+            />
+        <Button
+            android:background="@color/colorPrimary"
+            android:textColor="#FFFFFF"
+            android:layout_width="wrap_content"
+            android:layout_weight="1"
+            android:id="@+id/puzzle_level_up"
+            android:text="up"
+            android:layout_height="wrap_content" />
     </LinearLayout>
 </LinearLayout>
