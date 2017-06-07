@@ -18,7 +18,7 @@ import com.cyber.seyun.sppedjapan.Reaml.SettingRealm;
 import io.realm.Realm;
 import io.realm.RealmConfiguration;
 
-public class    FirstSettingActivity extends FragmentActivity implements View.OnClickListener {
+public class FirstSettingActivity extends FragmentActivity implements View.OnClickListener {
     final String TAG = "MainActivity";
     int mCurrentFragmentIndex;
     public final static int FRAGMENT_ONE = 0;
@@ -103,6 +103,7 @@ public class    FirstSettingActivity extends FragmentActivity implements View.On
         realm.beginTransaction();
         SettingRealm setting = realm.createObject(SettingRealm.class); // 관리 객체를 직접 만들기
         setting.setScreenWord(FirstSettingModel.FistView);
+        setting.setLevel(FirstSettingModel.FistViewLevel);
         realm.commitTransaction();
 
         Intent intent = new Intent(FirstSettingActivity.this,MainActivity.class);

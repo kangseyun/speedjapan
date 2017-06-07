@@ -42,13 +42,13 @@ public class FirstSettingLevelSetFragment extends android.support.v4.app.Fragmen
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                 switch (checkedId){
                     case R.id.radioButton_level1:
-                        FirstSettingModel.FistViewLevel = 1;
+                        FirstSettingModel.FistViewLevel = 15;
                         break;
                     case R.id.radioButton_level2:
-                        FirstSettingModel.FistViewLevel = 2;
+                        FirstSettingModel.FistViewLevel = 10;
                         break;
                     case R.id.radioButton_level3:
-                        FirstSettingModel.FistViewLevel = 3;
+                        FirstSettingModel.FistViewLevel = 5;
                         break;
                 }
             }

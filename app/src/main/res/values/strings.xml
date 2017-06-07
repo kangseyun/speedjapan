@@ -11,6 +11,7 @@
     <string name="title_activity_game_result_view">GameResultView</string>
     <string name="title_activity_setting">SettingActivity</string>
     <string name="title_activity_word">WordActivity</string>
+    <string name="banner_ad_unit_id">ca-app-pub-5443818794847553/1197281821</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

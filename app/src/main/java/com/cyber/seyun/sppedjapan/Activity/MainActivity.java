@@ -14,13 +14,17 @@ import android.widget.TextView;
 
 import com.cyber.seyun.sppedjapan.R;
 import com.cyber.seyun.sppedjapan.Receiver.ScreenService;
+import com.google.firebase.analytics.FirebaseAnalytics;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     private TextView GameMenu, setting, Word, Dic, Puzz, Chinese;
     private Intent PageMove;
     private Toolbar toolbar;
     private String TAG = MainActivity.class.getSimpleName();
+    private FirebaseAnalytics mFirebaseAnalytics;
 
+    private String id = "dcp.k953@gmail.com";
+    private String name = "seyun";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +37,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private void init() {
         toolbarSetup();
         findLayout();
+
+        // Google Analytics
+        mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
+        Bundle params = new Bundle();
+        params.putString("image_name", name);
+        params.putString("full_text", "123");
+        mFirebaseAnalytics.logEvent("share_image", params);
+
     }
 
     private void toolbarSetup() {

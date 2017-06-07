@@ -4,7 +4,10 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
 
+import com.cyber.seyun.sppedjapan.Model.ListViewSetting;
+
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by 590 on 2016-01-04.
@@ -36,6 +39,28 @@ public class DBController {
         } catch (Exception e) {
             Log.i(TAG, e.toString());
         }
+    }
+
+    public List<ListViewSetting> selectAll(){
+        List<ListViewSetting> word = new ArrayList<ListViewSetting>();
+
+        SQLiteDatabase db = SQLiteDatabase.openDatabase("/data/data/com.cyber.seyun.sppedjapan/databases/word.db", null, SQLiteDatabase.OPEN_READWRITE);
+        try {
+            String SQL = "select eng,japan from hiragana union select eng, japan from Kana;";
+            cursor = db.rawQuery(SQL, null);
+            cursor.moveToFirst();
+
+            word.add(new ListViewSetting(cursor.getString(0), cursor.getString(1)));
+            while (cursor.moveToNext()) {
+                word.add(new ListViewSetting(cursor.getString(0), cursor.getString(1)));
+            }
+
+            Log.i("select", "" + cursor.getInt(0) + "/" + cursor.getString(1));
+        } catch (Exception e) {
+            Log.i(TAG, e.toString());
+        }
+
+        return word;
     }
 
     public String readWord() {

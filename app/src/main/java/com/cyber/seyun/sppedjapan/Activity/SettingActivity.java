@@ -22,6 +22,9 @@ import com.cyber.seyun.sppedjapan.Model.ListViewSetting;
 import com.cyber.seyun.sppedjapan.R;
 import com.cyber.seyun.sppedjapan.Reaml.SettingRealm;
 import com.cyber.seyun.sppedjapan.Receiver.ScreenService;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.MobileAds;
 
 import java.util.ArrayList;
 
@@ -46,9 +49,18 @@ public class SettingActivity extends AppCompatActivity implements View.OnClickLi
 
     private void init()
     {
+
+        /* realm */
         RealmConfiguration realmConfig = new RealmConfiguration.Builder(getApplication()).build();
         Realm.setDefaultConfiguration(realmConfig);
         realm = Realm.getDefaultInstance();
+
+        /* addview */
+        MobileAds.initialize(getApplicationContext(), "ca-app-pub-3940256099942544~3347511713");
+        AdView mAdView = (AdView) findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
+
 
         toolbarSetup();
         find();

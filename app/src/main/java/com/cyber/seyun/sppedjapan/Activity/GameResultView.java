@@ -10,7 +10,9 @@ import android.widget.TextView;
 
 import com.cyber.seyun.sppedjapan.Model.GameItem;
 import com.cyber.seyun.sppedjapan.R;
-
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.MobileAds;
 
 
 public class GameResultView extends AppCompatActivity implements View.OnClickListener{
@@ -25,6 +27,11 @@ public class GameResultView extends AppCompatActivity implements View.OnClickLis
         setContentView(R.layout.activity_game_result_view);
 
         init();
+
+        MobileAds.initialize(getApplicationContext(), "ca-app-pub-5443818794847553/1197281821");
+        AdView mAdView = (AdView) findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
     }
 
     void init(){

@@ -9,13 +9,17 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.cyber.seyun.sppedjapan.Adapter.ListviewAdapter;
+import com.cyber.seyun.sppedjapan.Database.DBController;
 import com.cyber.seyun.sppedjapan.Model.ListViewSetting;
 import com.cyber.seyun.sppedjapan.R;
+
+import java.util.List;
 
 public class DicActivity extends AppCompatActivity {
     private Toolbar toolbar;
     private ListView listView;
     private ListviewAdapter mAdapter;
+    private DBController db = new DBController();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,9 +36,10 @@ public class DicActivity extends AppCompatActivity {
 
     private void setAdater() {
         mAdapter = new ListviewAdapter(this);
-        mAdapter.AddItem(new ListViewSetting("こんにちは", "안녕하세요"));
-        mAdapter.AddItem(new ListViewSetting("ありがとうございます ", "감사합니다."));
-        mAdapter.AddItem(new ListViewSetting("Setting", "셋팅"));
+
+
+        bind(db.selectAll());
+
 
         listView.setAdapter(mAdapter);
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -43,6 +48,12 @@ public class DicActivity extends AppCompatActivity {
 
             }
         });
+    }
+
+    private void bind(List<ListViewSetting> items) {
+        for (ListViewSetting item: items) {
+            mAdapter.AddItem(item);
+        }
     }
 
     private void find() {

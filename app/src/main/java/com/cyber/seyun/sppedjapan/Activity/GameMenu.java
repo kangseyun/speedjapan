@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -11,6 +12,10 @@ import android.widget.TextView;
 
 import com.cyber.seyun.sppedjapan.Model.GameItem;
 import com.cyber.seyun.sppedjapan.R;
+import com.cyber.seyun.sppedjapan.Reaml.SettingRealm;
+
+import io.realm.Realm;
+import io.realm.RealmConfiguration;
 
 public class GameMenu extends AppCompatActivity implements View.OnClickListener {
     private Button up, down;
@@ -19,21 +24,37 @@ public class GameMenu extends AppCompatActivity implements View.OnClickListener 
     private Toolbar toolbar;
     private final int MAX = 15;
     private final int MIN = 0;
+    private Realm realm;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game_menu);
-
         init();
+
+
+        // Level 맞게 타이머 설정
+        SettingRealm query = realm.where(SettingRealm.class).findFirst();
+        GameItem.TimerCount = query.getLevel();
+        timer.setText(Integer.toString(GameItem.TimerCount));
+
+
+        Log.i("Level",": " + query.getLevel());
     }
 
     //초기화
     private void init(){
+        realmInit();
         findLayout(); //레이아웃 적용
         GameItem.TimerCount_init(); // 타이머 카운트 0으로 초기화
         timer.setText(Integer.toString(GameItem.TimerCount));
         toolbarSetup();
+    }
+
+    private void realmInit() {
+        RealmConfiguration realmConfig = new RealmConfiguration.Builder(getApplication()).build();
+        Realm.setDefaultConfiguration(realmConfig);
+        realm = Realm.getDefaultInstance();
     }
 
     private void toolbarSetup() {
@@ -83,12 +104,14 @@ public class GameMenu extends AppCompatActivity implements View.OnClickListener 
                 GameItem.Timer = false;
                 GameItem.Flag = 2;
                 startActivity(PageMove);
+                finish();
                 break;
             case R.id.gameMenuGameStart2:
                 PageMove = new Intent(GameMenu.this, GameStart.class);
                 GameItem.Timer = false;
                 GameItem.Flag = 1;
                 startActivity(PageMove);
+                finish();
                 break;
 //            case R.id.LeftMenuButton:
 //                PageMove = new Intent(GameMenu.this,MainActivity.class);

@@ -8,7 +8,10 @@ import io.realm.RealmObject;
 
 public class SettingRealm extends RealmObject {
     private boolean ScreenWord = false;
+    private int level = 0;
 
+    public int getLevel() { return level;}
+    public void setLevel(int level) { this.level = level;}
     public boolean isScreenWord() {
         return ScreenWord;
     }

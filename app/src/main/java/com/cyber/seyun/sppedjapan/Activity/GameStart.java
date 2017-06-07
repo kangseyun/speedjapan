@@ -15,6 +15,9 @@ import android.widget.TextView;
 import com.cyber.seyun.sppedjapan.Database.DBController;
 import com.cyber.seyun.sppedjapan.R;
 import com.cyber.seyun.sppedjapan.Model.GameItem;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.MobileAds;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -42,6 +45,11 @@ public class GameStart extends AppCompatActivity implements View.OnClickListener
     }
 
     void init() {
+        MobileAds.initialize(getApplicationContext(), "ca-app-pub-5443818794847553/1197281821");
+        AdView mAdView = (AdView) findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
+
         toolbarSetup();
         FindView();
         item.init();
