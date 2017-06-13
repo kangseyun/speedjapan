@@ -1,23 +1,26 @@
 package com.cyber.seyun.sppedjapan.Activity;
 
 import android.app.Activity;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.Snackbar;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import com.cyber.seyun.sppedjapan.Adapter.ListviewAdapter;
 import com.cyber.seyun.sppedjapan.Model.ListViewSetting;
 import com.cyber.seyun.sppedjapan.R;
 import com.cyber.seyun.sppedjapan.Reaml.SettingRealm;
@@ -38,7 +41,7 @@ public class SettingActivity extends AppCompatActivity implements View.OnClickLi
     private Toolbar toolbar;
     private CoordinatorLayout layout;
     private Realm realm;
-
+    private LinearLayout setLevel;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -91,6 +94,9 @@ public class SettingActivity extends AppCompatActivity implements View.OnClickLi
                     }
             }
         });
+
+        setLevel = (LinearLayout) findViewById(R.id.setting_level);
+        setLevel.setOnClickListener(this);
     }
 
     private void ScreenWordSetting(boolean checked) {
@@ -110,6 +116,56 @@ public class SettingActivity extends AppCompatActivity implements View.OnClickLi
         snack.show();
     }
 
+    private void setDialogLevel() {
+        AlertDialog.Builder alertBuilder = new AlertDialog.Builder(
+                SettingActivity.this);
+        alertBuilder.setIcon(R.drawable.ic_launcher);
+        alertBuilder.setTitle("항목중에 하나를 선택하세요.");
+
+        // List Adapter 생성
+        final ArrayAdapter<String> adapter = new ArrayAdapter<String>(
+                SettingActivity.this,
+                android.R.layout.select_dialog_singlechoice);
+        adapter.add("5");
+        adapter.add("10");
+        adapter.add("15");
+
+        // 버튼 생성
+        alertBuilder.setNegativeButton("취소",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog,
+                                        int which) {
+                        dialog.dismiss();
+                    }
+                });
+
+        // Adapter 셋팅
+        alertBuilder.setAdapter(adapter,
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog,
+                                        int id) {
+
+                        // AlertDialog 안에 있는 AlertDialog
+                        String strName = adapter.getItem(id);
+                        AlertDialog.Builder innBuilder = new AlertDialog.Builder(
+                                SettingActivity.this);
+                        innBuilder.setMessage(strName);
+                        innBuilder.setTitle("당신이 선택한 것은 ");
+                        innBuilder
+                                .setPositiveButton(
+                                        "확인",
+                                        new DialogInterface.OnClickListener() {
+                                            public void onClick(
+                                                    DialogInterface dialog,
+                                                    int which) {
+                                                dialog.dismiss();
+                                            }
+                                        });
+                        innBuilder.show();
+                    }
+                });
+        alertBuilder.show();
+    }
 
     private void setFlagScreenWorld(boolean flag) {
         realm.beginTransaction();
@@ -126,6 +182,12 @@ public class SettingActivity extends AppCompatActivity implements View.OnClickLi
     @Override
     public void onClick(View v) {
         int id = v.getId();
+
+        switch (id) {
+            case R.id.setting_level:
+                setDialogLevel();
+                break;
+        }
     }
 
     @Override

@@ -62,7 +62,27 @@ public class DBController {
 
         return word;
     }
+    public List<String> getPuzzle(int level) {
+        List<String> obj = new ArrayList<String>();
+        SQLiteDatabase db = SQLiteDatabase.openDatabase("/data/data/com.cyber.seyun.sppedjapan/databases/word.db", null, SQLiteDatabase.OPEN_READWRITE);
 
+        try {
+            String SQL = "select eng,japan from hiragana union select eng, japan from Kana;";
+            cursor = db.rawQuery(SQL, null);
+            cursor.moveToFirst();
+
+            //obj.add(new ListViewSetting(cursor.getString(0), cursor.getString(1)));
+            while (cursor.moveToNext()) {
+            //    word.add(new ListViewSetting(cursor.getString(0), cursor.getString(1)));
+            }
+
+            Log.i("PuzzleWorld", "");
+        } catch (Exception e) {
+            Log.i(TAG, e.toString());
+        }
+
+        return obj;
+    }
     public String readWord() {
 
         SQLiteDatabase db = SQLiteDatabase.openDatabase("/data/data/com.cyber.seyun.sppedjapan/databases/word.db", null, SQLiteDatabase.OPEN_READWRITE);

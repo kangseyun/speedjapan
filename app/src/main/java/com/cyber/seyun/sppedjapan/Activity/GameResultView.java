@@ -25,7 +25,6 @@ public class GameResultView extends AppCompatActivity implements View.OnClickLis
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game_result_view);
-
         init();
 
         MobileAds.initialize(getApplicationContext(), "ca-app-pub-5443818794847553/1197281821");

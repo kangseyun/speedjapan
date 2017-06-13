@@ -26,6 +26,7 @@
             card_view:cardElevation="5dp"
             card_view:cardCornerRadius="2dp">
             <TextView
+                android:id="@+id/card_view1_content"
                 android:layout_gravity="center"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -41,6 +42,7 @@
             card_view:cardElevation="5dp"
             card_view:cardCornerRadius="2dp">
             <TextView
+                android:id="@+id/card_view2_content"
                 android:layout_gravity="center"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -64,6 +66,12 @@
             android:layout_height="80dp"
             card_view:cardElevation="5dp"
             card_view:cardCornerRadius="2dp">
+            <TextView
+                android:id="@+id/card_view3_content"
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="mama"/>
         </android.support.v7.widget.CardView>
 
         <android.support.v7.widget.CardView
@@ -75,6 +83,12 @@
             android:layout_marginLeft="10dp"
             card_view:cardElevation="5dp"
             card_view:cardCornerRadius="2dp">
+            <TextView
+                android:id="@+id/card_view4_content"
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="mama"/>
         </android.support.v7.widget.CardView>
     </LinearLayout>
     <LinearLayout
@@ -95,6 +109,12 @@
             android:layout_height="80dp"
             card_view:cardElevation="5dp"
             card_view:cardCornerRadius="2dp">
+            <TextView
+                android:id="@+id/card_view5_content"
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="mama"/>
         </android.support.v7.widget.CardView>
 
         <android.support.v7.widget.CardView
@@ -106,6 +126,12 @@
             android:layout_marginLeft="10dp"
             card_view:cardElevation="5dp"
             card_view:cardCornerRadius="2dp">
+            <TextView
+                android:id="@+id/card_view6_content"
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="mama"/>
         </android.support.v7.widget.CardView>
     </LinearLayout>
     <LinearLayout
@@ -126,6 +152,12 @@
             android:layout_height="80dp"
             card_view:cardElevation="5dp"
             card_view:cardCornerRadius="2dp">
+            <TextView
+                android:id="@+id/card_view7_content"
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="mama"/>
         </android.support.v7.widget.CardView>
 
         <android.support.v7.widget.CardView
@@ -137,37 +169,56 @@
             android:layout_marginLeft="10dp"
             card_view:cardElevation="5dp"
             card_view:cardCornerRadius="2dp">
+            <TextView
+                android:id="@+id/card_view8_content"
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="mama"/>
         </android.support.v7.widget.CardView>
     </LinearLayout>
-    <LinearLayout
-        android:layout_weight="1"
 
+    <LinearLayout
+        android:layout_width="match_parent"
+
+        android:layout_height="80dp"
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
         android:layout_marginTop="15dp"
-        android:layout_width="match_parent"
-        android:layout_height="80dp">
+        android:layout_weight="1">
 
         <android.support.v7.widget.CardView
             android:id="@+id/card_view7"
-            android:layout_weight="1"
-            android:layout_marginRight="10dp"
-            android:layout_gravity="center"
             android:layout_width="match_parent"
             android:layout_height="80dp"
-            card_view:cardElevation="5dp"
-            card_view:cardCornerRadius="2dp">
+            android:layout_gravity="center"
+            android:layout_marginRight="10dp"
+            android:layout_weight="1"
+            card_view:cardCornerRadius="2dp"
+            card_view:cardElevation="5dp">
+            <TextView
+                android:id="@+id/card_view9_content"
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="mama"/>
         </android.support.v7.widget.CardView>
 
         <android.support.v7.widget.CardView
             android:id="@+id/card_view8"
-            android:layout_weight="1"
-            android:layout_gravity="center"
             android:layout_width="match_parent"
             android:layout_height="80dp"
+            android:layout_gravity="center"
             android:layout_marginLeft="10dp"
-            card_view:cardElevation="5dp"
-            card_view:cardCornerRadius="2dp">
+            android:layout_weight="1"
+            card_view:cardCornerRadius="2dp"
+            card_view:cardElevation="5dp">
+            <TextView
+                android:id="@+id/card_view10_content"
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="mama"/>
         </android.support.v7.widget.CardView>
     </LinearLayout>
 </LinearLayout>

@@ -30,8 +30,8 @@ public class PuzzleMenuActivity extends AppCompatActivity implements View.OnClic
     }
 
     private void findLayout() {
-        //start = (Button) findViewById(R.id.puzzle_start);
-        //start.setOnClickListener(this);
+        start = (Button) findViewById(R.id.puzzle_start);
+        start.setOnClickListener(this);
         level = (TextView) findViewById(R.id.puzzle_level);
         Level_up = (Button) findViewById(R.id.puzzle_level_up);
         Level_down = (Button) findViewById(R.id.puzzle_level_down);
@@ -74,8 +74,8 @@ public class PuzzleMenuActivity extends AppCompatActivity implements View.OnClic
 
         switch (id) {
             case R.id.puzzle_start:
-                //Intent i = new Intent(PuzzleMenuActivity.this, PuzzleActivity.class);
-                //startActivity(i);
+                Intent i = new Intent(PuzzleMenuActivity.this, PuzzleActivity.class);
+                startActivity(i);
                 break;
             case R.id.puzzle_level_down:
                 GameLevel_Down();
