@@ -10,7 +10,12 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.cyber.seyun.sppedjapan.Database.DBController;
+import com.cyber.seyun.sppedjapan.Model.ListViewSetting;
 import com.cyber.seyun.sppedjapan.R;
+
+import java.util.Collections;
+import java.util.List;
+import java.util.Random;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -19,7 +24,7 @@ import butterknife.OnClick;
 public class PuzzleActivity extends AppCompatActivity implements View.OnClickListener {
     private Toolbar toolbar;
     private DBController db;
-
+    private List<ListViewSetting> word;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,6 +40,9 @@ public class PuzzleActivity extends AppCompatActivity implements View.OnClickLis
     }
 
     private void getWord() {
+        word = db.selectAll();
+        long seed = System.nanoTime();
+        Collections.shuffle(word, new Random(seed));
     }
 
     private void wordInit() {
@@ -59,6 +67,16 @@ public class PuzzleActivity extends AppCompatActivity implements View.OnClickLis
         t9.setOnClickListener(this);
         t10.setOnClickListener(this);
 
+        t1.setText(word.get(0).getKorean());
+        t2.setText(word.get(0).getJapan());
+        t3.setText(word.get(1).getKorean());
+        t4.setText(word.get(1).getJapan());
+        t5.setText(word.get(2).getKorean());
+        t6.setText(word.get(2).getJapan());
+        t7.setText(word.get(3).getKorean());
+        t8.setText(word.get(3).getJapan());
+        t9.setText(word.get(4).getKorean());
+        t10.setText(word.get(4).getJapan());
     }
 
 
